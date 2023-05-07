@@ -1,4 +1,8 @@
-﻿namespace Computron
+﻿///-----------------------------
+/// Computron, Open AI chat bot
+///-----------------------------
+
+namespace Computron
 {
     internal class Program
     {
