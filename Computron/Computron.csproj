@@ -14,4 +14,8 @@
     <PackageReference Include="Standard.AI.OpenAI" Version="0.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+  </ItemGroup>
+
 </Project>
