@@ -8,13 +8,13 @@ using Standard.AI.OpenAI.Models.Services.Foundations.ChatCompletions;
 
 namespace Computron
 {
-    public class OpenAIProxy : IOpenAIProxy
+    public class Computron : IComputron
     {
         private readonly OpenAIClient _client;
 
         private readonly List<ChatCompletionMessage> _messages;
 
-        public OpenAIProxy(string apiKey, string organizationId)
+        public Computron(string apiKey, string organizationId)
         {
             var config = new OpenAIConfigurations
             {

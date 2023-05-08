@@ -8,7 +8,7 @@ namespace Computron
 {
     public class Program
     {
-        private static IOpenAIProxy _computron;
+        private static IComputron _computron;
 
         static async Task Main(string[] args)
         {
@@ -59,7 +59,7 @@ namespace Computron
             var apiKep = configuration["ApiKey"];
             var organizationId = configuration["OrganizationId"];
 
-            _computron = new OpenAIProxy(apiKep, organizationId);
+            _computron = new Computron(apiKep, organizationId);
         }
     }
 }
