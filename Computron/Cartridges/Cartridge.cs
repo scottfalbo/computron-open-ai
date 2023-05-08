@@ -10,6 +10,8 @@ namespace Computron.Cartridges
         public string Type { get; set; }
         private string Input { get; set; }
 
+        protected Cartridge() { }
+
         protected Cartridge(string name, string type, string input) 
         {
             Name = name;
@@ -25,5 +27,7 @@ namespace Computron.Cartridges
         }
 
         public string ReadCartridge() => Input;
+
+        public void SetInput(string input) => Input = input;
     }
 }
