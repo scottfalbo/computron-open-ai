@@ -4,9 +4,9 @@
 
 using Standard.AI.OpenAI.Models.Services.Foundations.ChatCompletions;
 
-namespace Computron
+namespace Computron.Clients
 {
-    public interface IComputron
+    public interface IOpenAIProxy
     {
         Task<ChatCompletionMessage[]> Send(string message);
     }

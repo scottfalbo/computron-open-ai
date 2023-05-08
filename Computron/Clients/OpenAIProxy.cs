@@ -6,15 +6,15 @@ using Standard.AI.OpenAI.Clients.OpenAIs;
 using Standard.AI.OpenAI.Models.Configurations;
 using Standard.AI.OpenAI.Models.Services.Foundations.ChatCompletions;
 
-namespace Computron
+namespace Computron.Clients
 {
-    public class Computron : IComputron
+    public class OpenAIProxy : IOpenAIProxy
     {
         private readonly OpenAIClient _client;
 
         private readonly List<ChatCompletionMessage> _messages;
 
-        public Computron(string apiKey, string organizationId)
+        public OpenAIProxy(string apiKey, string organizationId)
         {
             var config = new OpenAIConfigurations
             {
@@ -40,7 +40,7 @@ namespace Computron
         public Task<ChatCompletionMessage[]> Send(string message)
         {
             var chatMessage = new ChatCompletionMessage()
-            { 
+            {
                 Content = message,
                 Role = "user"
             };

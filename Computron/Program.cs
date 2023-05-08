@@ -2,13 +2,14 @@
 /// Computron, Open AI chat bot
 ///-----------------------------
 
+using Computron.Clients;
 using Microsoft.Extensions.Configuration;
 
 namespace Computron
 {
     public class Program
     {
-        private static IComputron _computron;
+        private static IOpenAIProxy _computron;
 
         static async Task Main(string[] args)
         {
@@ -59,7 +60,7 @@ namespace Computron
             var apiKep = configuration["ApiKey"];
             var organizationId = configuration["OrganizationId"];
 
-            _computron = new Computron(apiKep, organizationId);
+            _computron = new OpenAIProxy(apiKep, organizationId);
         }
     }
 }
