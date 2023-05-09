@@ -2,7 +2,6 @@
 /// Computron, Open AI chat bot
 ///-----------------------------
 
-using Computron.Clients;
 using Microsoft.Extensions.Configuration;
 
 namespace Computron

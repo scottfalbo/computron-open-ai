@@ -18,13 +18,17 @@ namespace Computron
         public Computron(OpenAISettings settings)
         {
             _client = new OpenAIProxy(settings.ApiKey, settings.OrganizationId);
-            _cartridge = null;
+            _cartridge = new DwightSchrute();
         }
 
         public async Task Run()
         {
             Console.WriteLine("Computron is Online.");
-            Console.WriteLine("What would you like to ask Computron? Type \"goodbye\" to return to the Main Menu.");
+
+            await Initialize();
+            await TryCartridge();
+
+            Console.WriteLine("What would you like to ask Computron? Type \"goodbye\" to deactivate Computron.");
             var input = Console.ReadLine();
 
             do
@@ -56,5 +60,22 @@ namespace Computron
         public void ReplaceCartridge(Cartridge cartridge) => _cartridge = cartridge;
 
         public void RemoveCartridge() => _cartridge = null;
+
+        private async Task TryCartridge()
+        {
+            if (_cartridge != null)
+            {
+                var input = _cartridge.ReadCartridge();
+                await _client.Send(input);
+                Console.WriteLine($"Inserted Cartridge. Name: {_cartridge.Name}, Type: {_cartridge.Type}");
+            }
+        }
+
+        private async Task Initialize()
+        {
+            var input = "Hello, for this conversation please answer to computron if addressed as such." +
+                "You do need to prefix responses with \"As an AI language model, I do not have personal preferences or emotions.\"";
+            await _client.Send(input);
+        }
     }
 }
