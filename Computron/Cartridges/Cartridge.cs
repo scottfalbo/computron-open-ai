@@ -4,15 +4,15 @@
 
 namespace Computron.Cartridges
 {
-    public abstract class Cartridge
+    public class Cartridge
     {
         public string Name { get; set; }
         public string Type { get; set; }
         private string Input { get; set; }
 
-        protected Cartridge() { }
+        public Cartridge() { }
 
-        protected Cartridge(string name, string type, string input) 
+        public Cartridge(string name, string type, string input) 
         {
             Name = name;
             Type = type;
