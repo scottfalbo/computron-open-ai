@@ -2,8 +2,7 @@
 /// Computron, Open AI chat bot
 ///-----------------------------
 
-
-namespace Computron.Cartridges
+namespace CompuCore.Cartridges
 {
     public class Initialization : Cartridge
     {

@@ -2,7 +2,7 @@
 /// Computron, Open AI chat bot
 ///-----------------------------
 
-namespace Computron.Cartridges.Personalities
+namespace CompuCore.Cartridges.Personalities
 {
     public class DwightSchrute : Cartridge
     {

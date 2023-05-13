@@ -2,23 +2,22 @@
 /// Computron, Open AI chat bot
 ///-----------------------------
 
-using Computron.Cartridges;
-using Computron.Cartridges.Personalities;
-using Computron.Clients;
-using Computron.UserInterface;
+using CompuCore.Cartridges;
+using CompuCore.Clients;
+using CompuCore.Configuration;
 
-namespace Computron
+namespace CompuCore
 {
-    public class Computron
+    public class ComputronAdapter
     {
         private IOpenAIProxy _client { get; set; }
 
-        private Cartridge _cartridge { get; set; }
+        private Cartridge? _cartridge { get; set; }
 
-        public Computron(OpenAISettings settings)
+        public ComputronAdapter(OpenAISettings settings)
         {
             _client = new OpenAIProxy(settings.ApiKey, settings.OrganizationId);
-            _cartridge = new DwightSchrute();
+            _cartridge = null;
         }
 
         public async Task Run()

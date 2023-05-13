@@ -6,7 +6,7 @@ using Standard.AI.OpenAI.Clients.OpenAIs;
 using Standard.AI.OpenAI.Models.Configurations;
 using Standard.AI.OpenAI.Models.Services.Foundations.ChatCompletions;
 
-namespace Computron.Clients
+namespace CompuCore.Clients
 {
     public class OpenAIProxy : IOpenAIProxy
     {

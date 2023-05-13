@@ -4,7 +4,7 @@
 
 using Standard.AI.OpenAI.Models.Services.Foundations.ChatCompletions;
 
-namespace Computron.Clients
+namespace CompuCore.Clients
 {
     public interface IOpenAIProxy
     {
