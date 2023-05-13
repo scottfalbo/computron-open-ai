@@ -23,10 +23,9 @@ namespace Computron
 
         public async Task Run()
         {
-            Console.WriteLine("Computron is Online.");
-
             await Initialize();
             await TryCartridge();
+            Console.WriteLine("Computron is Online.");
 
             Console.WriteLine("What would you like to ask Computron? Type \"goodbye\" to deactivate Computron.");
             var input = Console.ReadLine();
@@ -39,7 +38,7 @@ namespace Computron
 
                     foreach (var item in results)
                     {
-                        Console.WriteLine($"{item.Role}: {item.Content}");
+                        Console.WriteLine($"Computron: {item.Content}");
                     }
 
                     Console.WriteLine("What else can Computron answer?");
@@ -65,9 +64,10 @@ namespace Computron
         {
             if (_cartridge != null)
             {
+                Console.WriteLine($"Computron is loading Cartridge. Name: {_cartridge.Name}, Type: {_cartridge.Type}");
                 var input = _cartridge.ReadCartridge();
                 await _client.Send(input);
-                Console.WriteLine($"Inserted Cartridge. Name: {_cartridge.Name}, Type: {_cartridge.Type}");
+                Console.WriteLine($"Cartridge successfully loaded.");
             }
         }
 
