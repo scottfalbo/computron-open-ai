@@ -21,6 +21,7 @@ namespace Computron
                 configuration["ApiKey"], 
                 configuration["OrganizationId"]);
             Console.WriteLine("Computron Initialized.\n");
+
             await computron.Run();
         }
     }
