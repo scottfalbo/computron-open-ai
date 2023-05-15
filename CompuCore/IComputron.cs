@@ -3,14 +3,15 @@
 ///-----------------------------
 
 using CompuCore.Cartridges;
+using CompuCore.Models;
 
 namespace CompuCore
 {
-    internal interface IComputronAdapter
+    public interface IComputron
     {
         public Task<List<string>> Send(string input);
 
-        public Task<bool> Initialize();
+        public Task<ComputronValidation> Initialize();
 
         public void AddCartridge(Cartridge cartridge);
 
